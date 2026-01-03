@@ -1,13 +1,13 @@
 <?php
-
-
+/*
+Template Name: Order Page
+*/
 get_header();
-
-
-$place_name     = get_field('place_name');
-$place_address  = get_field('place_address');
-
-$here_time      = get_field('here_time');
-$pickup_time    = get_field('pickup_time');
-$delivery_time  = get_field('delivery_time');
 ?>
+
+<main>
+  <h2><?php the_title(); ?></h2>
+  <?php the_content(); ?>
+</main>
+
+<?php get_footer(); ?>

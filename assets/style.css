@@ -1,0 +1,13 @@
+/*
+Theme Name: Granoflame
+Theme URI: https://example.com
+Author: Denys
+Author URI: https://example.com
+Description: Minimal WordPress theme
+Version: 1.0
+*/
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
