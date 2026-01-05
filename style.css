@@ -6,7 +6,11 @@ Author URI: https://example.com
 Description: Minimal WordPress theme
 Version: 1.0
 */
-
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #8c1d18;
+}
 .order{
   background:#8b2c2c;
   min-height:100vh;
@@ -139,26 +143,27 @@ Version: 1.0
     margin-top:24px;
   }
 }
+
 /* ===============================
    PAGE
 ================================ */
 .food-menu {
     background: #8c1d18;
-    padding: 60px 80px;
+    padding: 56px 72px;
 }
 
 /* ===============================
    CATEGORY
 ================================ */
 .food-category {
-    margin-bottom: 72px;
+    margin-bottom: 64px;
 }
 
 .category-title {
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 600;
     color: #ffffff;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
 /* ===============================
@@ -167,7 +172,7 @@ Version: 1.0
 .food-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 18px;
 }
 
 /* ===============================
@@ -176,69 +181,70 @@ Version: 1.0
 .food-card {
     position: relative;
     background: #8f2b26;
-    border-radius: 24px;
-    padding: 18px;
-    color: #ffffff;
+    border-radius: 22px;
+    padding: 16px 16px 18px;
 
+    color: #ffffff;
     display: flex;
     flex-direction: column;
-    height: 300px;
 
-    /* ВАЖНО: тень как в референсе */
+    height: 280px; /* МЕНЬШЕ */
+
+    /* мягкая внешняя тень как в рефе */
     box-shadow:
-        0 16px 32px rgba(0,0,0,.35);
+        0 14px 28px rgba(0,0,0,.35);
 }
 
 /* ===============================
    IMAGE
 ================================ */
 .food-image {
-    margin-bottom: 12px;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .food-image img {
-    width: 128px;
+    width: 120px;
     height: auto;
 
-    /* "парящая" картинка */
-    filter: drop-shadow(0 12px 22px rgba(0,0,0,.4));
+    /* эффект "парения" */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,.4));
 }
 
 /* ===============================
    TEXT
 ================================ */
 .food-title {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     line-height: 1.25;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .food-price {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
-/* описание — НЕ светлое */
+/* описание темнее и компактнее */
 .food-desc {
     font-size: 13px;
     line-height: 1.45;
-    color: rgba(255,255,255,0.72);
-    margin-bottom: 10px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
 }
 
-/* вес — ВСЕГДА внизу */
+/* вес ВСЕГДА внизу слева */
 .food-weight {
     margin-top: auto;
     font-size: 12px;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.55);
 }
 
 /* ===============================
-   ADD TO CART BUTTON
+   ADD TO CART
 ================================ */
 .food-card .add_to_cart_button {
     position: absolute;
@@ -270,7 +276,7 @@ Version: 1.0
     background: #f2d7b6;
 }
 
-/* убираем Woo ссылку */
+/* скрываем Woo-ссылку */
 .food-card .added_to_cart {
     display: none !important;
 }
@@ -280,8 +286,8 @@ Version: 1.0
 ================================ */
 .sticky-cart {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: 22px;
+    right: 22px;
 
     background: #f6e8c3;
     border-radius: 999px;
@@ -294,7 +300,7 @@ Version: 1.0
     text-decoration: none;
     color: #000;
 
-    box-shadow: 0 12px 28px rgba(0,0,0,.35);
+    box-shadow: 0 12px 26px rgba(0,0,0,.35);
     z-index: 9999;
 }
 
@@ -316,6 +322,12 @@ Version: 1.0
 /* ===============================
    RESPONSIVE
 ================================ */
+@media (max-width: 1100px) {
+    .food-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 900px) {
     .food-menu {
         padding: 40px 24px;
@@ -334,4 +346,196 @@ Version: 1.0
     .food-grid {
         grid-template-columns: 1fr;
     }
+}
+/* ===============================
+   FOOD HEADER (ONLY THIS PAGE)
+================================ */
+
+.food-header {
+    background: #8c1d18;
+    padding: 28px 32px 32px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+}
+
+/* ===============================
+   TOP ROW
+================================ */
+.food-header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+/* ===============================
+   LOGO
+================================ */
+.food-logo {
+    display: flex;
+    align-items: center;
+}
+
+.food-logo-img {
+    height: 120px;       
+    width: 120px;
+    display: block;
+}
+
+/* ===============================
+   ACTIONS (SEARCH + LANG)
+================================ */
+.food-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.header-btn {
+    height: 44px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255,255,255,.10);
+    color: #fff;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    font-size: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.28);
+    transition: background .15s ease, transform .15s ease;
+}
+
+.header-btn:hover {
+    background: rgba(255,255,255,.18);
+    transform: translateY(-1px);
+}
+
+/* SEARCH */
+.header-search {
+    width: 44px;
+    padding: 0;
+    font-size: 18px;
+}
+
+/* LANGUAGE */
+.header-lang {
+    padding: 0 16px;
+    font-weight: 600;
+}
+
+.lang-arrow {
+    font-size: 12px;
+    opacity: .75;
+}
+
+/* ===============================
+   CATEGORY BAR
+================================ */
+.food-header__category {
+    background: rgba(255,255,255,.08);
+    border-radius: 999px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+/* ===============================
+   TABS
+================================ */
+.food-header__tabs {
+    display: flex;
+    gap: 12px;
+}
+
+.food-header__tabs .tab {
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background .15s ease;
+}
+
+.food-header__tabs .tab:hover {
+    background: rgba(255,255,255,.14);
+}
+
+.food-header__tabs .tab.active {
+    background: #7a1915;
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .food-header {
+        padding: 20px;
+    }
+
+    .food-header__tabs {
+        flex-wrap: wrap;
+    }
+
+    .food-logo-img {
+        height: 46px;
+    }
+}
+/* ===============================
+   FOOD DROPDOWN
+================================ */
+.food-dropdown {
+    position: relative;
+}
+
+.food-dropdown__toggle {
+    width: 100%;
+    background: rgba(255,255,255,.08);
+    border-radius: 999px;
+    padding: 12px 20px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.food-dropdown__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #7a1915;
+    border-radius: 18px;
+    padding: 8px;
+    display: none;
+    z-index: 20;
+}
+
+.food-dropdown__menu a {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.food-dropdown__menu a:hover {
+    background: rgba(255,255,255,.12);
+}
+
+.food-dropdown.open .food-dropdown__menu {
+    display: block;
 }
