@@ -7,6 +7,12 @@ Description: Minimal WordPress theme
 Version: 1.0
 */
 
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .order{
   background:#8b2c2c;
   min-height:100vh;
@@ -138,5 +144,935 @@ Version: 1.0
   .order-links{
     margin-top:24px;
   }
+}
+
+/* ==============================
+   LANDING PAGE
+============================== */
+
+/* =============================
+   LANDING PAGE — match reference (scoped)
+============================= */
+.lp{
+  background:#6b1b1b;
+  min-height:100vh;
+  padding:26px 0 80px;
+  color:#fff;
+}
+
+.lp__frame{
+  max-width:420px;
+  width:92vw;
+  margin:0 auto;
+  background:#8b2c2c;
+  border-radius:28px;
+  padding:18px 18px 24px;
+}
+
+/* header row */
+.lp-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.lp-header__logo{
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.30);
+  background:rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex:0 0 auto;
+  text-decoration:none;
+  color:#fff;
+}
+.lp-logo-img{ width:100%; height:100%; object-fit:cover; display:block; }
+.lp-logo-fallback{ font-size:12px; opacity:.9; }
+
+.lp-header__nav{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex:1 1 auto;
+  overflow:auto;
+  scrollbar-width:none;
+  padding-bottom:2px;
+}
+.lp-header__nav::-webkit-scrollbar{ display:none; }
+
+.lp-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+/* header actions (search + EN) */
+.lp-header__actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:0 0 auto;
+}
+
+.lp-iconbtn{
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.lp-lang{ position:relative; }
+.lp-lang__btn{
+  height:34px;
+  padding:0 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.lp-lang__menu{
+  position:absolute;
+  top:42px;
+  right:0;
+  min-width:160px;
+  border-radius:14px;
+  background:#8b2c2c;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 18px 34px rgba(0,0,0,.30);
+  padding:8px;
+  display:none;
+  z-index:50;
+}
+.lp-lang.is-open .lp-lang__menu{ display:block; }
+
+.lp-lang__item{
+  display:block;
+  padding:10px 10px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  opacity:.92;
+}
+.lp-lang__item:hover{ background:rgba(255,255,255,.08); }
+.lp-lang__item.is-current{ opacity:1; border:1px solid rgba(255,255,255,.18); }
+
+/* topline */
+.lp-topline{
+  margin:8px 0 12px;
+  font-size:12px;
+  font-weight:600;
+  opacity:.92;
+}
+
+/* hero like reference */
+.lp-hero{
+  position:relative;
+  width:100%;
+  height:210px;
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(0,0,0,.12);
+  margin-bottom:14px;
+}
+.lp-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* badges */
+.lp-badges{
+  position:absolute;
+  top:10px;
+  right:10px;
+  display:flex;
+  gap:8px;
+}
+.lp-badge{
+  background:rgba(246,237,220,.96);
+  color:#2b1b15;
+  border-radius:10px;
+  padding:7px 10px;
+  font-size:12px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  box-shadow:0 10px 20px rgba(0,0,0,.18);
+}
+.lp-badge__icon{ width:18px; height:18px; object-fit:contain; display:block; }
+.lp-badge__text{ line-height:1; }
+
+/* typography */
+.lp-title{
+  margin:6px 0 10px;
+  font-size:18px;
+  font-weight:900;
+  line-height:1.25;
+}
+
+.lp-content{
+  font-size:12px;
+  line-height:1.75;
+  opacity:.92;
+}
+.lp-content p{ margin:0 0 10px; }
+
+/* quote */
+.lp-quote{
+  background:#f6eddc;
+  color:#2b1b15;
+  border-radius:14px;
+  padding:16px;
+  margin:18px 0 18px;
+  font-size:12px;
+  line-height:1.65;
+  box-shadow:0 10px 20px rgba(0,0,0,.16);
+}
+
+/* bottom two columns */
+.lp-footer{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  font-size:11px;
+  line-height:1.6;
+  opacity:.9;
+}
+@media (max-width:520px){
+  .lp-footer{ grid-template-columns:1fr; }
+}
+/* === LANDING SCALE UP === */
+.lp__frame{
+  max-width:520px;      /* було 420 */
+  padding:26px 26px 30px;
+}
+
+.lp-header{
+  margin-bottom:18px;
+}
+
+.lp-topline{
+  font-size:14px;
+}
+
+.lp-hero{
+  height:260px;         /* було ~210 */
+  margin-bottom:18px;
+}
+
+.lp-title{
+  font-size:22px;       /* було 18 */
+  margin:10px 0 14px;
+}
+
+.lp-content{
+  font-size:14px;       /* було 12 */
+  line-height:1.8;
+}
+
+.lp-content p{
+  margin-bottom:14px;
+}
+
+.lp-badge{
+  font-size:13px;
+  padding:8px 12px;
+}
+
+.lp-quote{
+  font-size:14px;
+  padding:20px;
+}
+
+.lp-footer{
+  font-size:12px;
+  margin-top:18px;
+}
+/* =========================
+   LANDING HEADER (like ref)
+   Works with classes:
+   .site-header.site-header--landing
+========================= */
+
+/* make sure links don't look default */
+.site-header a { text-decoration: none; }
+
+/* landing header wrapper */
+.site-header--landing{
+  background: #8b2c2c;
+  max-width: 520px;
+  width: 92vw;
+  margin: 26px auto 0;
+  padding: 18px 18px 14px;
+  border-radius: 28px;
+  color: #fff;
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+}
+
+/* inner row */
+.site-header--landing .site-header__inner{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* logo circle */
+.site-header--landing .site-header__logo{
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+.site-header--landing .site-header__logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* menu pills */
+.site-header--landing .site-header__nav{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.site-header--landing .site-pill{
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .1px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.18);
+}
+
+/* right actions: search + EN */
+.site-header--landing .site-header__actions{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+/* search circle */
+.site-header--landing .site-icon-btn{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* language dropdown pill */
+.site-header--landing .site-lang{ position: relative; }
+.site-header--landing .site-lang__btn{
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* dropdown menu container */
+.site-header--landing .site-lang__menu{
+  position: absolute;
+  top: 52px;
+  right: 0;
+  min-width: 180px;
+  background: #8b2c2c;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 18px 34px rgba(0,0,0,.32);
+  display: none;           /* show via JS later (or hover if you want) */
+  z-index: 50;
+}
+
+/* if Polylang outputs UL/LI inside the menu — reset it */
+.site-header--landing .site-lang__menu ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-header--landing .site-lang__menu li{ margin: 0; }
+
+/* style items whether they are <a> directly or inside li */
+.site-header--landing .site-lang__menu a{
+  display: block;
+  padding: 10px 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  opacity: .92;
+}
+.site-header--landing .site-lang__menu a:hover{
+  background: rgba(255,255,255,.08);
+  opacity: 1;
+}
+
+/* OPTIONAL: show dropdown on hover (quick fix without JS) */
+.site-header--landing .site-lang:hover .site-lang__menu{
+  display: block;
+}
+
+.site-header--landing{
+  background: #8b2c2c;
+  width: calc(100% - 80px);   /* майже вся ширина */
+  max-width: 1200px;          /* як у референсі */
+  margin: 24px auto 0;
+  padding: 20px 28px;
+  border-radius: 32px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+}
+.lp__frame{
+  width: calc(100% - 80px);
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+.lp__card{
+  padding: 36px 40px 42px;
+  border-radius: 32px;
+}
+.lp__image{
+  width: 100%;
+  height: 420px;        /* було менше */
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.lp__image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lp__title{
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.lp__subtitle{
+  font-size: 18px;
+  opacity: .85;
+  margin-bottom: 24px;
+}
+
+.lp__text{
+  font-size: 16px;
+  line-height: 1.65;
+}
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #7b1f1f;
+}
+/* ===== RESET (remove white margins) ===== */
+html, body { margin: 0; padding: 0; }
+body { background: #7b1f1f; }
+
+/* =========================================================
+   LANDING HEADER (header.php) — wide like reference
+   Classes used:
+   .site-header.site-header--landing
+   .site-header__inner .site-header__logo .site-header__nav
+   .site-pill .site-header__actions .site-icon-btn
+   .site-lang .site-lang__btn .site-lang__menu
+========================================================= */
+.site-header--landing{
+  background:#8b2c2c;
+  width: min(1200px, calc(100% - 80px));
+  margin: 24px auto 0;
+  padding: 18px 26px;
+  border-radius: 36px;
+  box-shadow: 0 26px 60px rgba(0,0,0,.35);
+  color:#fff;
+}
+
+.site-header--landing .site-header__inner{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.site-header--landing .site-header__logo{
+  width:64px;
+  height:64px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex:0 0 auto;
+  text-decoration:none;
+  color:#fff;
+}
+.site-header--landing .site-header__logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.site-header--landing .site-header__nav{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  flex:1 1 auto;
+}
+
+.site-header--landing .site-pill{
+  height:40px;
+  padding:0 18px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 12px 22px rgba(0,0,0,.18);
+  font-size:14px;
+  font-weight:800;
+  color:#fff;
+  text-decoration:none;
+}
+
+.site-header--landing .site-header__actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex:0 0 auto;
+}
+
+.site-header--landing .site-icon-btn{
+  width:48px;
+  height:48px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.site-header--landing .site-lang{ position:relative; }
+.site-header--landing .site-lang__btn{
+  height:48px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-size:14px;
+  font-weight:900;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+}
+
+/* Polylang dropdown: remove default ul/li look */
+.site-header--landing .site-lang__menu{
+  position:absolute;
+  top:56px;
+  right:0;
+  min-width:200px;
+  background:#8b2c2c;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:16px;
+  padding:10px;
+  box-shadow:0 20px 40px rgba(0,0,0,.32);
+  display:none;
+  z-index:50;
+}
+.site-header--landing .site-lang__menu ul{ list-style:none; margin:0; padding:0; }
+.site-header--landing .site-lang__menu li{ margin:0; padding:0; }
+.site-header--landing .site-lang__menu a{
+  display:block;
+  padding:12px 12px;
+  border-radius:12px;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:800;
+  opacity:.92;
+}
+.site-header--landing .site-lang__menu a:hover{
+  background:rgba(255,255,255,.08);
+  opacity:1;
+}
+.site-header--landing .site-lang:hover .site-lang__menu{ display:block; }
+
+/* =========================================================
+   LANDING PAGE (page-landing.php)
+   Markup used:
+   <main class="lp"><section class="lp__frame"> ... <div class="lp-hero"><img ...>
+========================================================= */
+.lp{
+  background:#7b1f1f;
+  min-height:100vh;
+  padding: 26px 0 80px;
+  color:#fff;
+}
+
+/* big landing card */
+.lp__frame{
+  width: min(1100px, calc(100% - 80px));
+  margin: 36px auto 0;
+  background:#8b2c2c;
+  border-radius: 40px;
+  padding: 34px 42px 44px;
+  box-shadow: 0 26px 60px rgba(0,0,0,.30);
+}
+
+/* topline */
+.lp-topline{
+  margin: 0 0 18px;
+  font-size: 16px;
+  font-weight: 700;
+  opacity: .92;
+}
+
+/* ===== MAIN HERO IMAGE: -20% width, +40% height =====
+   This targets your real hero wrapper from our code: .lp-hero
+*/
+.lp-hero{
+  width: 80%;
+  height: 420px;           /* make it longer */
+  margin: 14px auto 26px;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0,0,0,.12);
+}
+.lp-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* badges on image */
+.lp-badges{
+  position:absolute;
+  top:14px;
+  right:14px;
+  display:flex;
+  gap:10px;
+}
+.lp-badge{
+  background:rgba(246,237,220,.96);
+  color:#2b1b15;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 900;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow: 0 14px 26px rgba(0,0,0,.18);
+}
+.lp-badge__icon{ width:20px; height:20px; object-fit:contain; display:block; }
+
+/* typography */
+.lp-title{
+  margin: 0 0 12px;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 900;
+}
+.lp-content{
+  font-size: 16px;
+  line-height: 1.75;
+  opacity: .92;
+}
+.lp-content p{ margin: 0 0 14px; }
+
+/* quote card */
+.lp-quote{
+  margin: 22px 0 22px;
+  padding: 22px;
+  border-radius: 20px;
+  background: #f6eddc;
+  color: #2b1b15;
+  font-size: 16px;
+  line-height: 1.7;
+  box-shadow: 0 14px 26px rgba(0,0,0,.16);
+}
+
+/* bottom columns */
+.lp-footer{
+  margin-top: 20px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: .92;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .site-header--landing,
+  .lp__frame{
+    width: calc(100% - 32px);
+  }
+  .lp__frame{ padding: 26px 22px 30px; }
+  .lp-hero{ width: 92%; height: 360px; }
+  .lp-title{ font-size: 28px; }
+  .lp-footer{ grid-template-columns: 1fr; }
+}
+@media (max-width: 520px){
+  .site-header--landing{ padding: 14px 14px; border-radius: 26px; }
+  .site-header--landing .site-header__logo{ width:56px; height:56px; }
+  .site-header--landing .site-pill{ height:38px; font-size:13px; padding:0 14px; }
+  .site-header--landing .site-icon-btn{ width:44px; height:44px; }
+  .site-header--landing .site-lang__btn{ height:44px; font-size:13px; }
+
+  .lp-hero{ width: 100%; height: 320px; }
+}
+/* ===== LANDING FOOTER (static) ===== */
+
+.lp-footer{
+  background:#8b2c2c;
+  color:#f6eddc;
+  margin-top: 40px;
+  padding: 60px 0 70px;
+  border-radius: 0 0 40px 40px;
+}
+
+.lp-footer__inner{
+  width: min(1100px, calc(100% - 80px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.4fr;
+  gap: 48px;
+}
+
+.lp-footer__title{
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #f6eddc;
+}
+
+.lp-footer__highlight{
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffd8a8;
+}
+
+.lp-footer__text{
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: .95;
+}
+
+.lp-footer__list{
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.lp-footer__list li{
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: .95;
+}
+
+.lp-footer__link{
+  color:#ffd8a8;
+  font-weight: 900;
+  text-decoration: none;
+}
+.lp-footer__link:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 900px){
+  .lp-footer__inner{
+    width: calc(100% - 32px);
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}/* ===== LANDING FOOTER CENTERED ===== */
+
+.lp-footer{
+  background:#8b2c2c;
+  margin: 60px auto 0;          /* центруємо футер */
+  padding: 60px 0 70px;
+  border-radius: 40px;
+  max-width: 1200px;            /* як у landing */
+  width: calc(100% - 80px);     /* відступи з боків */
+}
+
+/* внутрішній контейнер */
+.lp-footer__inner{
+  max-width: 1000px;            /* щоб колонки не розповзались */
+  margin: 0 auto;               /* ЦЕНТРУВАННЯ */
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.4fr;
+  gap: 48px;
+}
+
+/* заголовки */
+.lp-footer__title{
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #f6eddc;
+}
+
+/* підзаголовок */
+.lp-footer__highlight{
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffd8a8;
+}
+
+/* текст */
+.lp-footer__text{
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #f6eddc;
+  opacity: .95;
+}
+
+/* список */
+.lp-footer__list{
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.lp-footer__list li{
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* email */
+.lp-footer__link{
+  color: #ffd8a8;
+  font-weight: 900;
+  text-decoration: none;
+}
+.lp-footer__link:hover{
+  text-decoration: underline;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .lp-footer{
+    width: calc(100% - 32px);
+    padding: 46px 0 54px;
+  }
+
+  .lp-footer__inner{
+    grid-template-columns: 1fr;
+    gap: 34px;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+/* ===== PAGE LAYOUT: center landing between header & footer ===== */
+
+html, body{
+  height: 100%;
+}
+
+/* головний контейнер сторінки */
+body{
+  display: flex;
+  flex-direction: column;
+  background: #7b1f1f;
+}
+
+/* header і footer НЕ ростуть */
+.site-header--landing,
+.lp-footer{
+  flex-shrink: 0;
+}
+
+/* landing wrapper росте і центрує контент */
+.lp{
+  flex: 1;                         /* займає весь простір між */
+  display: flex;
+  align-items: center;             /* ВЕРТИКАЛЬНЕ центрування */
+  justify-content: center;         /* горизонтальне */
+  padding: 40px 0;
+}
+
+/* твоя основна картка */
+.lp__frame{
+  width: min(1100px, calc(100% - 80px));
+  margin: 0 auto;
 }
 
